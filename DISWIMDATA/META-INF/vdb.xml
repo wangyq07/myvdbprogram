@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vdb name="DSWIMDATA_VDB" version="1">
+  <description>VDB using DDL statements</description>
+  <model name="DSWIMDATASRC" type="PHYSICAL" visible="true">
+    <property name="importer.tableTypes" value="TABLE,VIEW" />
+     <property name="importer.importProcedures" value="true" /> 
+     <property name="importer.objects" value="function"/>
+    <property name="importer.useFullSchemaName" value="false" />
+    <property name="importer.schemaPattern" value="dbo" />
+    <property name="cache-metadata" value="false" />
+    <property name="importer.importKeys" value="true" />
+    <property name="importer.widenUnsignedTypes" value="false" />
+    <source name="DSWIMDATASRC" connection-jndi-name="java:/DSWIMDATASRC" translator-name="sqlserver" />
+  </model>
+ 
+  <model name="DSWIMDATA" type="VIRTUAL" visible="true">
+    <property name="modelClass" value="Relational" />
+    <metadata type="DDL-FILE">/ddl/DSWIMDATA.ddl</metadata>
+  </model> 
+</vdb>

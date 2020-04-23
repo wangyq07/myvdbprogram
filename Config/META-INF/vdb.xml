@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><vdb name="Config_VDB" version="1">
+  <description>VDB using DDL statements</description>
+  <model name="Config" type="PHYSICAL" visible="true">
+    <property name="importer.tableTypes" value="TABLE,VIEW"/>
+    <property name="importer.importProcedures" value="true" /> 
+	 <property name="importer.objects" value="function"/>
+    <property name="importer.useFullSchemaName" value="false"/>
+    <property name="importer.schemaPattern" value="public"/>
+    <property name="cache-metadata" value="false"/>
+    <property name="importer.importKeys" value="true"/>
+    <property name="importer.widenUnsignedTypes" value="false"/>
+    <source connection-jndi-name="java:/Config" name="Config" translator-name="postgresql"/>
+  </model>
+  <model name="Config_VDB" type="VIRTUAL" visible="true">
+    <property name="modelClass" value="Relational"/>
+    <metadata type="DDL-FILE">/ddl/Config_VDB.ddl</metadata>
+  </model>
+</vdb>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><vdb name="DSPDM_CAIRN" version="1">
+  <description>VDB using DDL statements</description>
+  <model name="DSPDM_CAIRN_PHYSICAL" type="PHYSICAL" visible="false">
+    <property name="importer.tableTypes" value="TABLE,VIEW" />
+    <property name="importer.useFullSchemaName" value="false" />
+    <property name="importer.schemaPattern" value="dbo" />
+    <property name="cache-metadata" value="false" />
+    <property name="importer.importKeys" value="true" />
+    <property name="importer.widenUnsignedTypes" value="false" />
+    <source connection-jndi-name="java:/DSPDM_CAIRN" name="DSPDM_CAIRN" translator-name="sqlserver"/>
+  </model>
+   <model name="DOF" type="PHYSICAL" visible="false">
+    <property name="importer.tableTypes" value="TABLE,VIEW" />
+    <property name="importer.useFullSchemaName" value="false" />
+    <property name="importer.schemaPattern" value="dbo" />
+    <property name="cache-metadata" value="false" />
+    <property name="importer.importKeys" value="true" />
+    <property name="importer.widenUnsignedTypes" value="false" />
+    <source connection-jndi-name="java:/DOF_CAIRN" name="DOF_CAIRN" translator-name="sqlserver"/>
+  </model>
+  <model name="DSPDM_CAIRN_V" type="VIRTUAL" visible="true">
+    <property name="modelClass" value="Relational"/>
+    <metadata type="DDL-FILE">/ddl/DSPDM_CAIRN.ddl</metadata>
+  </model>
+</vdb>
