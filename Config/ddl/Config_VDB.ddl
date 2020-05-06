@@ -44,11 +44,11 @@ BEGIN
 	SELECT uuid() as id,SP_APPEND_GROUP_MENU.menu_sercurity_name,SP_APPEND_GROUP_MENU.group_name;
 	select 'success';
 END;
-CREATE VIRTUAL PROCEDURE SP_APPEND_GROUP_MENU_AUTH (changedby STRING, group_name STRING,authdata STRING) 
+CREATE VIRTUAL PROCEDURE SP_APPEND_GROUP_MENU_AUTH (changedby STRING, group_name STRING,authdata STRING(9999)) 
 RETURNS (STATUS STRING) 
 AS
 BEGIN
-   declare string data=replace(replace(authdata,'^!','{'),'!^','}'); 
+   declare string data=replace(replace(replace(authdata,'^!','{'),'!^','}'),'111','&'); 
 	 DELETE FROM Config.wf_leftmenu_auth WHERE usergroup =group_name;
 	 INSERT INTO Config.wf_leftmenu_auth(USERGROUP,authmenus,rowchanged_by,rowchanged_date )
 	 SELECT group_name,data,changedby,now();

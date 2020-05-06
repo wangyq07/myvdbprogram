@@ -12,7 +12,6 @@
         <property name="importer.widenUnsignedTypes" value="false"/>
         <source name="PDMDimSrc" connection-jndi-name="java:/PDMDimSrc" translator-name="sql-override"/>
     </model>
-	
     <model name="PDMDim" type="VIRTUAL" visible="true" >
 		<property name="modelClass" value="Relational" />
 		<property value="PDMTx" name="import-vdb-reference"/>
