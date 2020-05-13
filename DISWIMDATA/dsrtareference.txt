@@ -1,9 +1,0 @@
-AlarmServerity
-ClassProperty
-confAlarmInstance
-confSolutionAlarm
-rtSolution
-rtSolutionEvent
-rtSolutionEventAck
-rtSolutionEventClr
-rtSolutionEventClrBkp
