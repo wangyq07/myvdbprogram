@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><vdb name="DSBPM_VDB" version="1">
+  <description>VDB using DDL statements</description>
+  <model name="DSBPM" type="PHYSICAL" visible="true">
+    <property name="importer.tableTypes" value="TABLE,VIEW"/>
+    <property name="importer.useFullSchemaName" value="false"/>
+    <property name="importer.schemaPattern" value=""/>
+    <property name="cache-metadata" value="false"/>
+    <property name="importer.importKeys" value="true"/>
+    <property name="importer.widenUnsignedTypes" value="false"/>
+    <source connection-jndi-name="java:/DSBPM_DB" name="DSBPM_DB" translator-name="postgresql"/>
+  </model>
+  <model name="DSBPM_DB_VDB" type="VIRTUAL" visible="true">
+    <property name="modelClass" value="Relational"/>
+    <metadata type="DDL-FILE">/ddl/DSBPM.ddl</metadata>
+  </model>
+</vdb>

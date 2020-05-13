@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<vdb name="PDMDim" version="1">
+ <description>VDB using DDL statements</description>
+   <property name="UseConnectorMetadata" value="true"/>
+<import-vdb import-data-policies="false" version="1" name="PDMTx"/>
+	<model name="PDMDimSrc" type="PHYSICAL" visible="false">
+        <property name="importer.tableTypes" value="TABLE,VIEW"/>
+		<property name="importer.useFullSchemaName" value="false"/>
+        <property name="importer.schemaPattern" value="dbo"/>
+        <property name="cache-metadata" value="false"/>
+        <property name="importer.importKeys" value="true"/>
+        <property name="importer.widenUnsignedTypes" value="false"/>
+        <source name="PDMDimSrc" connection-jndi-name="java:/PDMDimSrc" translator-name="sql-override"/>
+    </model>
+    <model name="PDMDim" type="VIRTUAL" visible="true" >
+		<property name="modelClass" value="Relational" />
+		<property value="PDMTx" name="import-vdb-reference"/>
+		<metadata type="DDL-FILE">/ddl/PDMDim.ddl</metadata>
+    </model>
+  <translator name="sql-override" type="sqlserver">
+    <property name="DatabaseVersion" value="10.0"/>
+  </translator>
+	<entry path="/lib/dspudf.jar">
+        <property name="checksum" value="670737442"/>
+    </entry>
+</vdb>
